@@ -7,7 +7,7 @@ This module will walk you through Artifactory. What it is, what it does, why you
 
 This step will walk you through creating a Docker repository type and uploading your container images, allowing you to use Artifactory as your Docker Registry.
 
-In the upper right-hand corner, click the dropdown that displays your username and select "Quick Setup." From that screen, click Docker, and follow on-screen instructions. Default names and settings are fine for this.
+In the upper right-hand corner, click the dropdown that displays your username and select "Quick Setup." From that screen, select Docker, click Create, and follow on-screen instructions. Default names and settings are fine for this.
 
 From the main UI, clicking Artifactory -> Artifacts should now show you three new repositories: docker, docker-local, and docker-remote. <!-- TODO: Add short explanation of local/remote/virtual repositories here. -->
 
@@ -39,4 +39,11 @@ Now you're ready to push it to your repository:
  
 `docker push ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/my-docker-image:latest`
 
-Back in the platform UI, in your Artifactory repository tree, you will now see your artifacts!
+Back in the platform UI, in your Artifactory repository tree, you will now see your docker image!
+
+
+### Python
+
+To get started with Python in Artifactory, click the dropdown in the upper right-hand corner and select Quick Setup. From that screen, select PyPi. Click Create, and if you navigate back to Artifactory -> Artifacts in the platform UI, you'll see your new Python repositories!
+
+<!-- TODO: Finish this -->
