@@ -1,16 +1,20 @@
 # Artifactory Module
 
+
 This module will walk you through Artifactory. What it is, what it does, why you should use a binary repository manager, and how to get started. We will cover usage for two repository types: Docker, and Python.
 
 
 ## Overview
 
 
-Artifactory is a universal binary repository manager. This means that it can be used to manage your build artifacts (compiled binaries, information about your builds, docker images, helm charts, etc) regardless of the technologies you're using -- Python, JavaScript, C#, Ruby, whatever. It supports 27 different package types explicitly, as well as a generic repository type for everything else. Repositories are broken up into three types: local, remote, and virtual. 
+Artifactory is a universal binary repository manager. This means that it can be used to manage your build artifacts (compiled binaries, information about your builds, docker images, helm charts, etc) regardless of the technologies you're using -- Python, JavaScript, C#, Ruby, whatever. It supports 27 different package types explicitly, as well as a generic repository type for everything else. This isn't a replacement for source control tools, like GitHub or Bitbucket. Think of it as the place your code goes after it's been wrtitten and built or packaged, but before it's deployed. Repositories are broken up into three categories: local, remote, and virtual. 
 
 **Local** repositories are what they sound like: repositories for your code, that exists locally on your machine. **Remote** repositories are also fairly self-explanatory; they contain remote code, like your project's depeendencies. This functions sort of like a cache, so that after the first download, your project pulls its dependencies from the associated remote repository rather than from NPM or PyPi or whatever. **Virtual** repositories create a kind of envelope around the local and remote repositories for your project, and this is what you'll be interacting with most frequently.
 
-A tool like this is used for many reasons, but the biggest benefits are to companies with a lot of different technologies in the stack, and companies that have security concerns requiring them to tightly control both their own code and their dependencies. This isn't a replacement for source control tools, like GitHub or Bitbucket. Think of it as the place your code goes after it's been wrtitten and built or packaged, but before it's deployed.
+A tool like this is used for many reasons, but the biggest benefits are to companies with a lot of different technologies in their stack, and companies that have security concerns requiring them to tightly control both their own code and their dependencies.
+
+
+## Examples
 
 
 ### Docker
