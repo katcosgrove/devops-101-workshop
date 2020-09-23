@@ -28,10 +28,10 @@ To start, you need a CI/CD tool -- JFrog Pipelines. This is what’s going to au
 
 3. Create a Pipeline
     - In your fork of this repository, in the python-example repository, you will find a pre-defined sample pipeline YAML file.
-    - Update the pipeline definition by editing the pipelines.yml file, and changing the path from: katcosgrove/devops-101-workshop/python-example” to your forked GitHub repository: “<github_user_name>/devops-101-workshop/python-example”.
+    - Update the pipeline definition by editing the pipelines.yml file, and changing the path from: katcosgrove/devops-101-workshop/sample-projects/python-example” to your forked GitHub repository: “<github_user_name>/devops-101-workshop/sample-projects/python-example”.
 
 4. Add a Pipeline Source
-    - Navigate back to the Application module. Expand the Pipelines menu, and the Pipeline Sources menu. Add your forked GitHub repository as a Single Branch pipeline source, with the Integration “my_github”, Repository Full Name “<your_GitHub_user_name>/devops-101-workshop/python-example”, Branch “master”, and Pipeline Config File Filter “pipelines.yml”.
+    - Navigate back to the Application module. Expand the Pipelines menu, and the Pipeline Sources menu. Add your forked GitHub repository as a Single Branch pipeline source, with the Integration “my_github”, Repository Full Name “<your_GitHub_user_name>/devops-101-workshop/sample-projects/python-example”, Branch “master”, and Pipeline Config File Filter “pipelines.yml”.
 
 5. Manually Trigger the Pipeline
     - Navigate back to the Application module, expand the Pipelines menu and click the My Pipelines menu item. Click on the basic_pipeline, click on step_1 to trigger the step.
