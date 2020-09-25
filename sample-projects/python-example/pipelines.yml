@@ -53,7 +53,7 @@ pipelines:
         type: Bash
         configuration:
           environmentVariables:
-            step_env_var1: "Hello, I am an environment variable declared inside of a step!"
+            step_env_var1: "Hello, I am an environment variable declared inside of a step"
           inputSteps:
             - name: step_2
         execution:
