@@ -1,6 +1,5 @@
 # Workshop: DevOps 101
 
-[NOTE: This is a draft. Outline subject to change somewhat as content is built.]
 
 ## Course Description
 
@@ -17,7 +16,7 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
     The Docker client should be installed and configured on your machine.
 
 3. Python3
-    We will need to run a hello world Python application. Python 3.6 or higher is required.
+    We will need to package a simple Python application. Python 3.6 or higher is required.
 
 4. Code editor
     Whatever you are most comfortable with. I will be using SublimeText. 
@@ -32,27 +31,24 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 - What is all of this jargon?
 
 
-### Artifactory Module
-- What does "artifact" mean?
-- Why do you need to manage your build artifacts?
+### [Artifactory Module](https://github.com/katcosgrove/devops-101-workshop/blob/master/docs/artifactory.md)
+- What is binary repository manager?
+- What are build artifacts?
+- Why might you need to manage your build artifacts?
 - Binary repository setup in Artifactory
-    - PyPi
     - Docker
+    - PyPi
 
 
-### Pipelines Module
-- What is CI/CD?
-- Pipelines Integrations
-- Writing a “Hello World” pipeline
-
-
-### Xray Module
+### [Xray Module](https://github.com/katcosgrove/devops-101-workshop/blob/master/docs/xray.md)
 - Why do devs need to worry about vulnerability detection and license compliance?
 - Security and License policies
 - Scan a Build
-- Reading the Results
+- Running Reports
+- Reading Results
 
 
-### Wrapping Up
-- Next Steps
-- Thanks
+### [Pipelines Module](https://github.com/katcosgrove/devops-101-workshop/blob/master/docs/pipelines.md)
+- What is CI/CD?
+- Pipelines Integrations
+- Writing a “Hello World” pipeline
