@@ -57,5 +57,7 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 #### Additional Resources
 
 [Artifactory Documentation](https://www.jfrog.com/confluence/display/JFROG/Package+Management)
+
 [Xray Documentation](https://www.jfrog.com/confluence/display/JFROG/Xray+Security+and+Compliance)
-[Pipeelines Documentation](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Developer+Guide)
+
+[Pipelines Documentation](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Developer+Guide)
