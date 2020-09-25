@@ -7,9 +7,9 @@ This module will walk you through Xray. We will cover software vulnerabilities a
 ## Overview
 
 
-Xray is a tool that protects you from security problems in your software. It looks at your dependencies and compares them against known issues in the NVD (National Vulnerability Database), and optionally against Risk Based Security's VulnDB if you have the paid Xray plan. Not all vulnerabilities are critical and require immediate attention though, so Xray presents you with the CVSS score (on a scale from 1 to 10) for each vulnerability, as well as the severity (Low, Medium, High). If a version of that particular dependency exists with a fix for the vulnerability Xray found, it will tell you that as well, so you can go update your dependency immediately.
+Xray is a tool that protects you from security problems in your software. It looks at your dependencies and compares them against known issues in the NVD (National Vulnerability Database), and optionally against Risk Based Security's VulnDB if you have the Xray Premium plan. Not all vulnerabilities are critical and require immediate attention though, so Xray presents you with the CVSS score (on a scale from 1 to 10) for each vulnerability, as well as the severity (Low, Medium, High). If a version of that particular dependency exists with a fix for the vulnerability Xray found, it will tell you that as well, so you can go update your dependency immediately.
 
-With the paid version of Xray, if you're working with a lot of open source tools at work, or you're working in a particularly large open source project in your spare time, you also need to care about license compliance. Xray can keep track of that for you, too, so you don't accidentally add a dependency licensed in a way that conflicts with the rest of your project, thereby avoiding legal problems. This is not included in the free tier.
+With the Xray Premium, if you're working with a lot of open source tools at work, or you're working in a particularly large open source project in your spare time, you also need to care about license compliance. Xray can keep track of that for you, too, so you don't accidentally add a dependency licensed in a way that conflicts with the rest of your project, thereby avoiding legal problems. This is not included in the free tier.
 
 Xray functions on a system of Policies and Watches. Policies allow us to define security and license compliance behaviors. Once they are defined, they are enforced by applying them to Watches. A Watch is a collection of repositories, builds, and release bundles that Xray should look at. Based on the results of the scan, you can automate certain actions. It can automatically fail a build if a vulnerability that exceeds your comfort level is found, or it can call an external API, or it can just email someone for you. This is something that's really important for businesses or open sources tools that are heavily relied-on to have. It's less important for your personal projects, but still useful (and kinda fun). Anyway, it's included in the free tier of JFrog products, so you may as well use it.
 
@@ -20,7 +20,9 @@ Xray functions on a system of Policies and Watches. Policies allow us to define 
 1. Index Resources
     - Navigate to the Administration Module by clicking the gear icon in the left-hand navigation panel. Click on the Xray Security & Compliance menu, and then Indexed Resources.
 
-    - Click Add a Repository, select all of the repositories you want Xray to be able to scan (in this case, docker-local and docker-remote), then save. Xray only scans what you explicitly tell it to, so remember that if you add more repositories, you need to come back here to tell Xray to scan them. The scan is labor-intensive, so it's best to index only the repositories you actually need to watch, rather than indexing absolutely everything.
+    - Click Add a Repository, select all of the repositories you want Xray to be able to scan (in this case, docker-local and docker-remote), then save. 
+
+Xray only scans what you explicitly tell it to, so remember that if you add more repositories, you need to come back here to tell Xray to scan them. The scan is labor-intensive, so it's best to index only the repositories you actually need to watch, rather than indexing absolutely everything.
 
 2. Define a Security Policy
     - Navigate to the Application module, expand the Security & Compliance menu and click the Policies menu item.

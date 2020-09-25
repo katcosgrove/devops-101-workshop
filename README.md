@@ -38,14 +38,12 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 - Binary repository setup in Artifactory
     - PyPi
     - Docker
-- JFrog CLI
 
 
 ### Pipelines Module
 - What is CI/CD?
 - Pipelines Integrations
 - Writing a “Hello World” pipeline
-- Deploying an application
 
 
 ### Xray Module
