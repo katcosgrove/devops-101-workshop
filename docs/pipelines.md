@@ -20,18 +20,24 @@ To start, you need a CI/CD tool -- JFrog Pipelines. This is what’s going to au
     - Your Pipeline will be consuming and producing artifacts and builds, so first, we need to connect your Artifactory instance to it.
     - Generate and copy an API Key from your User Profile by clicking on the admin username on the top right of the JFrog platform and selecting Edit Profile. Enter your password, then click the gear icon to generate an API key. Copy it.
     - Navigate back to the Application Module. Expand the Pipelines menu on the left, and click Integrations.
-    - Create a new integration called “art” of the type Artifactory, with the url “<JFrog Cloud Platform URL>/artifactory” (e.g. “https://katc.jfrog.io/artifactory”), User “admin”, and the API Key you just copied.
+    - Create a new integration called “art” of the type Artifactory, with the url “${SERVER_NAME}/artifactory” (e.g. “https://katc.jfrog.io/artifactory”), your username, and the API Key you just copied.
 
 2. Add a GitHub Integration
-    - Log in to your GitHub account and generate a new personal access token called “pipelines-token” that has all scopes and permissions selected.
+    - Log in to your GitHub account and generate a new personal access token called “pipelines-token” that has all permissions for "repo" and "admin:repo_hook." Click your profile picture in the upper right-hand corner, go to Settings, then Developer Settings and Personal Access Tokens.
     - In the JFrog Platform, navigate back to the Application module, create a new integration called “my_github” of the type GitHub, with the Token you just created in your GitHub account.
 
 3. Create a Pipeline
     - In your fork of this repository, in the python-example repository, you will find a pre-defined sample pipeline YAML file.
-    - Update the pipeline definition by editing the pipelines.yml file, and changing the path from: katcosgrove/devops-101-workshop/sample-projects/python-example” to your forked GitHub repository: “<github_user_name>/devops-101-workshop/sample-projects/python-example”.
+    - Update the pipeline definition by editing the pipelines.yml file, and changing the path from my repository to your fork. For example:
+
+        `katcosgrove/devops-101-workshop`
+
+        becomes
+
+        `lorilorusso/devops-101-workshop`
 
 4. Add a Pipeline Source
-    - Navigate back to the Application module. Expand the Pipelines menu, and the Pipeline Sources menu. Add your forked GitHub repository as a Single Branch pipeline source, with the Integration “my_github”, Repository Full Name “<your_GitHub_user_name>/devops-101-workshop/sample-projects/python-example”, Branch “master”, and Pipeline Config File Filter “pipelines.yml”.
+    - Navigate back to the Application module. Expand the Pipelines menu, and the Pipeline Sources menu. Add your forked GitHub repository as a Single Branch pipeline source. The Integration should be named “my_github” and the Repository Full Name should be the path to your forked repo, e.g., “katcosgrove/devops-101-workshop”. You can leave the branch set to Master, and the Pipeline Config File Filter set to “pipelines.yml”.
 
 5. Manually Trigger the Pipeline
     - Navigate back to the Application module, expand the Pipelines menu and click the My Pipelines menu item. Click on the basic_pipeline, click on step_1 to trigger the step.
