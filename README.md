@@ -1,5 +1,7 @@
 # Workshop: DevOps 101
 
+Maintained by: Kat Cosgrove
+
 
 ## Course Description
 
@@ -25,7 +27,7 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 ## Course Outline
 
 
-### Intro to DevOps
+### [Intro to DevOps](https://github.com/katcosgrove/devops-101-workshop/blob/master/docs/intro.md)
 - What is the definition of DevOps?
 - What does DevOps mean for developers?
 - What is all of this jargon?
@@ -54,7 +56,7 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 - Writing a “Hello World” pipeline
 
 
-#### Additional Resources
+### Additional Resources
 
 [Artifactory Documentation](https://www.jfrog.com/confluence/display/JFROG/Package+Management)
 
