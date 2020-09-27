@@ -1,6 +1,8 @@
 # Workshop: DevOps 101
 
-Maintained by: Kat Cosgrove
+Maintained by: Kat Cosgrove, kat.cosgrove@gmail.com, @dixie3flatline
+
+**NOTE:** This is currently a work in progress. The documentation will definitely change, and the steps might change. If you're reading this, you're not looking at the final version of this workshop and you can expect things to be different tomorrow. 
 
 
 ## Course Description
@@ -11,9 +13,9 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 
 ## Prerequisites
 
-1. [JFrog SaaS account](https://jfrog.com/artifactory/start-free/#saas)
+1. [JFrog Cloud account](https://jfrog.com/artifactory/start-free/#saas)
 
-    This is free, no credit card required. It includes access to Artifactory, Pipelines, and Xray, with a limited amount of storage, transfer, and build minutes. 
+    This is free, no credit card required. It includes access to Artifactory, Pipelines, and Xray, with a limited amount of storage, transfer, and build minutes. NOTE: To follow this workshop, you must choose either AWS or Azure as your cloud provider. JFrog Pipelines is not currently available on GCP.
 
 2. Docker
 
