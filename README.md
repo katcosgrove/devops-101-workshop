@@ -12,15 +12,19 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 ## Prerequisites
 
 1. [JFrog SaaS account](https://jfrog.com/artifactory/start-free/#saas)
+
     This is free, no credit card required. It includes access to Artifactory, Pipelines, and Xray, with a limited amount of storage, transfer, and build minutes. 
 
 2. Docker
+
     The Docker client should be installed and configured on your machine.
 
 3. Python3
+
     We will need to package a simple Python application. Python 3.6 or higher is required.
 
 4. Code editor
+
     Whatever you are most comfortable with. I will be using SublimeText. 
 
 
