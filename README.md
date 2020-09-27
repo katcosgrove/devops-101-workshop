@@ -64,6 +64,8 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 
 ### Additional Resources
 
+[Glossary of Terms](https://github.com/katcosgrove/devops-101-workshop/blob/master/docs/glossary.md)
+
 [Artifactory Documentation](https://www.jfrog.com/confluence/display/JFROG/Package+Management)
 
 [Xray Documentation](https://www.jfrog.com/confluence/display/JFROG/Xray+Security+and+Compliance)
