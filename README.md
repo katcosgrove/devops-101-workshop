@@ -1,6 +1,6 @@
 # Workshop: DevOps 101
 
-Maintained by: Kat Cosgrove
+Maintained by: Kat Cosgrove, kat.cosgrove@gmail.com, @dixie3flatline
 
 
 ## Course Description
