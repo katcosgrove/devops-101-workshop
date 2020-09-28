@@ -21,39 +21,42 @@ A tool like this is used for many reasons, but the biggest benefits are to compa
 
 This step will walk you through creating a Docker repository type and uploading your container images, allowing you to use Artifactory as your Docker Registry.
 
-In the upper right-hand corner, click the dropdown that displays your username and select "Quick Setup." From that screen, select Docker, click Create, and follow on-screen instructions. Default names and settings are fine for this.
+1. Set Up the Repositories
+    - In the upper right-hand corner, click the dropdown that displays your username and select "Quick Setup." From that screen, select Docker, click Create, and follow on-screen instructions. Default names and settings are fine for this.
 
-From the main UI, clicking Artifactory -> Artifacts should now show you three new repositories: docker, docker-local, and docker-remote.
+    - From the main UI, clicking Artifactory -> Artifacts should now show you three new repositories: docker, docker-local, and docker-remote.
 
-Let's get a small container in there. Fork and clone this repository. In sample-projects/docker-example, you will find a Dockerfile. Update it to reference your server and virtual Docker repository, like so:
+2. Get a Container
+    - Let's get a small container in there. Fork and clone this repository. In sample-projects/docker-example, you will find a Dockerfile. Update it to reference your server and virtual Docker repository, like so:
 
-`FROM ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/ubuntu:16.04`
+        `FROM ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/ubuntu:16.04`
 
-becomes
+        becomes
 
-`FROM katc.jfrog.io/docker/ubuntu:16.04`
+        `FROM katc.jfrog.io/docker/ubuntu:16.04`
 
 
 The SERVER NAME is the first part of the URL for your environment.
 
 The VIRTUAL_REPO_NAME is the `docker` repository created by the quick setup wizard.
 
+2. Build and Tag
+    - In your terminal, log into the Docker client:
 
-In your terminal, log into the Docker client:
+        `docker login ${SERVER_NAME}.jfrog.io`
 
-`docker login ${SERVER_NAME}.jfrog.io`
+    - From the same directory as your Dockerfile, build and tag your image:
+         
+        `docker build --tag ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/my-docker-image:latest .`
 
-From the same directory as your Dockerfile, build and tag your image:
+        Note the trailing dot.
+
+3. Push to Artifactory
+    - Now you're ready to push it to your repository:
  
-`docker build --tag ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/my-docker-image:latest .`
+        `docker push ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/my-docker-image:latest`
 
-Note the trailing dot.
-
-Now you're ready to push it to your repository:
- 
-`docker push ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/my-docker-image:latest`
-
-Back in the platform UI, in your Artifactory repository tree, you will now see your docker image!
+    - Back in the platform UI, in your Artifactory repository tree, you will now see your docker image!
 
 
 ### Python
