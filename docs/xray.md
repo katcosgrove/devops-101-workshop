@@ -1,8 +1,7 @@
 # Xray Module
 
 
-This module will walk you through Xray. We will cover software vulnerabilities and license compliance, go through setup, manually trigger a scan, and learn to read the results. Later on when we talk about CI/CD, you will learn how to trigger scans automatically and take certain actions based on the scan results.
-
+This module will walk you through Xray. We will cover software vulnerabilities and license compliance, go through setup, manually trigger a scan, and learn to read the results.
 
 ## Overview
 
