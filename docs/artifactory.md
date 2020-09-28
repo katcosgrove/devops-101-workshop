@@ -78,10 +78,12 @@ To get started with Python in Artifactory, click the dropdown in the upper right
 2. Deploy a Wheel
     - In the terminal, navigate to your forked copy of this repository and /sample-projects/python-example. Run this command to deploy your package as a Python wheel:
         `python3 setup.py bdist_wheel upload -r local`
-    - If you want to deployee a Python egg instead, the command is this:
+    - If you want to deploye a Python egg instead, the command is this:
         `python3 setup.py sdist upload -r local`
-    - Note that you may need to either update or install Setuptools and wheel for this to work. If Python throws an error when you attempt to deploy your wheel, run this command to mae sure Setuptools and wheel are installed and updated:
+    - Note that you may need to either update or install Setuptools and wheel for this to work. If Python throws an error when you attempt to deploy your wheel, run this command to make sure Setuptools and wheel are installed and updated:
         `python3 -m pip install --user --upgrade setuptools wheel`
+
+At this point, you'll be able to see your package in the Artifactory repository tree, under PyPi!
 
 3. Resolving from Artifactory
     - If you want to resolve your package from Artifactory, you need to tell pip where to look by adding the following to your .pip.conf file. It's usually found in your home directory, at .pip/pip.conf
