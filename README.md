@@ -2,8 +2,6 @@
 
 Maintained by: Kat Cosgrove, kat.cosgrove@gmail.com, @dixie3flatline
 
-**NOTE:** This is currently a work in progress. The documentation will definitely change, and the steps might change. If you're reading this, you're not looking at the final version of this workshop and you can expect things to be different tomorrow. 
-
 
 ## Course Description
 
