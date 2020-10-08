@@ -23,7 +23,10 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 
     We will need to package a simple Python application. Python 3.6 or higher is required.
 
-4. Code editor
+4. Git + GitHub
+    A GitHub account is required so that you can fork this repository, and Git must be configured in your terminal so that you can clone it.
+
+5. Code editor
 
     Whatever you are most comfortable with. I will be using SublimeText. 
 
