@@ -11,7 +11,7 @@ When you’re new to an industry, you encounter a lot of new concepts. This can 
 
 ## Skill Level: Beginner
 
-Attendees do not need to be experts in or have experience using any of the technologies or pre-requisites involved in conduncting this workshop, aside from a functional understanding of Git and GitHub. The intended audience is people still in school, junior developers, or anyone from a technical or tech-adjacent background who has no hands-on experience with DevOps practices and tooling.
+Attendees do not need to be experts in or have experience using any of the technologies or pre-requisites involved in conducting this workshop, aside from a functional understanding of Git and GitHub. The intended audience is people still in school, junior developers, or anyone from a technical or tech-adjacent background who has no hands-on experience with DevOps practices and tooling.
 
 
 ## Prerequisites
