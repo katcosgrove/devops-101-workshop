@@ -62,7 +62,7 @@ Attendees do not need to be experts in or have experience using any of the techn
 - Reading Results
 
 
-### [Pipelines Module](https://github.com/katcosgrove/devops-101-workshop/blob/master/docs/pipelines.md)
+### [CI/CD Module](https://github.com/katcosgrove/devops-101-workshop/blob/master/docs/cicd.md)
 - What is CI/CD?
 - Pipelines Integrations
 - Writing a “Hello World” pipeline
