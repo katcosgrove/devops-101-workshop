@@ -34,7 +34,7 @@ jobs:
       - name: Build the docker images
         run: |
           docker login katc101.jfrog.io -u ${{ secrets. JF_ARTIFACTORY_USER}} -p ${{ secrets. JF_ARTIFACTORY_PASSWORD}}
-          docker build --tag katc101.jfrog.io/docker/my-docker-image:latest .
+          docker build --tag katc101.jfrog.io/docker/my-docker-image:latest ./sample-projects/docker-example
       
       - name: Docker push with JFrog CLI
         run: |
