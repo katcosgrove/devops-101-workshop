@@ -38,7 +38,7 @@ jobs:
       
       - name: Docker push with JFrog CLI
         run: |
-          ./jfrog rt docker-push katc101.jfrog.io/docker/my-docker-image:latest devops101 --build-name=devops101-docker --build-number=${{ github.run_number }}
+          ./jfrog rt docker-push katc101.jfrog.io/docker/my-docker-image:latest docker --build-name=devops101-docker --build-number=${{ github.run_number }}
   
       - name: Collect the environment variables and create the build info 
         run: |
