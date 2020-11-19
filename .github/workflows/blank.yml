@@ -1,14 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: sample-workflow
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,11 +34,11 @@ jobs:
       - name: Build the docker images
         run: |
           docker login katc101.jfrog.io -u ${{ secrets. JF_ARTIFACTORY_USER}} -p ${{ secrets. JF_ARTIFACTORY_PASSWORD}}
-          docker build --tag katc101-docker.jfrog.io/my-docker-image:latest .
+          docker build --tag katc101.jfrog.io/docker/my-docker-image:latest .
       
       - name: Docker push with JFrog CLI
         run: |
-          ./jfrog rt docker-push katc101-docker.jfrog.io/my-docker-image:latest devops101 --build-name=devops101-docker --build-number=${{ github.run_number }}
+          ./jfrog rt docker-push katc101.jfrog.io/docker/my-docker-image:latest devops101 --build-name=devops101-docker --build-number=${{ github.run_number }}
   
       - name: Collect the environment variables and create the build info 
         run: |
