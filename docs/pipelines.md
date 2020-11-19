@@ -41,8 +41,10 @@ To start, you need a CI/CD tool. For this workshop, we’ll be using GitHub Acti
 
 4. Add Secrets
     - Commit and push your changes, then go to your GitHub repository. We need to add some secrets, so that the Workflow can access your Artifactory instance without publicly committing passwords and access tokens to GitHub. Click Settings at the top, then Secrets on the left.
-    - Add three new secrets called JF_ARTIFACTORY_USER, JF_ARTIFACTORY_PASSWORD, JF_ARTIFACTORY_SECRET. The value of USER is the email address you use to log into your JFrog platform, PASSWORD is the password you use, and SECRET is the token we generated from the JFrog CLI earlier. 
+    - Add three new secrets called JF_ARTIFACTORY_USER, JF_ARTIFACTORY_PASSWORD, JF_ARTIFACTORY_SECRET. The value of USER is the email address you use to log into your JFrog platform, PASSWORD is the password you use, and SECRET is the token we generated from the JFrog CLI earlier.
+    - At the top of your GitHub repo, you’ll see a button that says Actions. Click that, and you’ll see one called “sample-workflow.” That’s your new CI pipeline!
 
 
-5. Manually Trigger the Pipeline
-    - Navigate back to the Application module, expand the Pipelines menu and click the My Pipelines menu item. Click on the basic_pipeline, click on step_1 to trigger the step.
+5. Trigger the Workflow
+    - Make a change to something in your fork of this repository, like typing “Hi, JFrog!” somewhere in the README.md file. Add, commit, and push that change, then go look at GitHub!
+    - Under the Actions tab in your repository, click sample-workflow and you'll see a build running. Click it to expand and see what each of the steps is doing!
