@@ -1,0 +1,49 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+            
+      - name: Setup JFrog CLI
+        run: |
+          curl -fL https://getcli.jfrog.io | sh
+          chmod +x jfrog
+          
+      - name: Configure the CLI
+        run: |
+          ./jfrog rt c import ${{ secrets. JF_ARTIFACTORY_SECRET}}
+                
+      - name: Build the docker images
+        run: |
+          docker login katc101.jfrog.io -u ${{ secrets. JF_ARTIFACTORY_USER}} -p ${{ secrets. JF_ARTIFACTORY_PASSWORD}}
+          docker build --tag katc101-docker.jfrog.io/my-docker-image:latest .
+      
+      - name: Docker push with JFrog CLI
+        run: |
+          ./jfrog rt docker-push katc101-docker.jfrog.io/my-docker-image:latest devops101 --build-name=devops101-docker --build-number=${{ github.run_number }}
+  
+      - name: Collect the environment variables and create the build info 
+        run: |
+          ./jfrog rt bce devops101-docker ${{ github.run_number }}
+  
+      - name: Publish build info 
+        run: |
+          ./jfrog rt bp devops101-docker ${{ github.run_number }}       
