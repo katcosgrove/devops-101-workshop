@@ -2,6 +2,7 @@
 
 Maintained by: Kat Cosgrove, kat.cosgrove@gmail.com, @dixie3flatline
 
+Hi, Workshop!
 
 ## Course Description
 
