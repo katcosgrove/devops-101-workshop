@@ -19,7 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
             
       - name: Setup JFrog CLI
@@ -30,15 +30,15 @@ jobs:
       - name: Configure the CLI
         run: |
           ./jfrog rt c import ${{ secrets. JF_ARTIFACTORY_SECRET}}
-                
+      # Update the docker login and docker build commands to point at your JFrog Platform instance instead of mine.        
       - name: Build the docker images
         run: |
-          docker login katc101.jfrog.io -u ${{ secrets. JF_ARTIFACTORY_USER}} -p ${{ secrets. JF_ARTIFACTORY_PASSWORD}}
-          docker build --tag katc101.jfrog.io/docker/my-docker-image:latest ./sample-projects/docker-example
-      
+          docker login katdemo.jfrog.io -u ${{ secrets. JF_ARTIFACTORY_USER}} -p ${{ secrets. JF_ARTIFACTORY_PASSWORD}}
+          docker build --tag katdemo.jfrog.io/docker/my-docker-image:latest ./sample-projects/docker-example
+      # Update the docker push command to point at your JFrog Platform instance instead of mine.
       - name: Docker push with JFrog CLI
         run: |
-          ./jfrog rt docker-push katc101.jfrog.io/docker/my-docker-image:latest docker --build-name=devops101-docker --build-number=${{ github.run_number }}
+          ./jfrog rt docker-push katdemo.jfrog.io/docker/my-docker-image:latest docker --build-name=devops101-docker --build-number=${{ github.run_number }}
   
       - name: Collect the environment variables and create the build info 
         run: |
