@@ -7,13 +7,7 @@ resources:
       branches:
         include: master
 
-  - name: build_info_1_docker_build_push
-    type: BuildInfo
-    configuration:
-      buildName: svc_build
-      buildNumber: 1
-
-  - name: promoted_build_info
+  - name: myBuildInfo
     type: BuildInfo
     configuration:
       sourceArtifactory: art
@@ -50,4 +44,4 @@ pipelines:
           inputSteps:
             - name: docker_push
           outputResources:
-            - name: build_info_1_docker_build_push
+            - name: myBuildInfo
