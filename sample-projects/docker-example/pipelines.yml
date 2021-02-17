@@ -6,12 +6,11 @@ resources:
       path: katcosgrove/devops-101-workshop    # replace with your repository name
       branches:
         include: master
-
   - name: myBuildInfo
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: svc_build
+      buildName: docker_build
       buildNumber: 1
 
 pipelines:
