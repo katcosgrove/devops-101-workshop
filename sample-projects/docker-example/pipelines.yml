@@ -1,5 +1,5 @@
 resources:
-  - name: dbp_repo
+  - name: demo_repo
     type: GitRepo
     configuration:
       gitProvider: my_github                       # <-- replace with your integration
@@ -7,7 +7,7 @@ resources:
       branches:
         include: master
 
-  - name: dbp_image
+  - name: demo_build
     type: Image
     configuration:
       registry: art                                # <-- replace with your artifactory integration
@@ -16,34 +16,34 @@ resources:
       imageTag: latest
       autoPull: true
       
-  - name: dbp_build_info
+  - name: demo_build_info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: dbp_build
+      buildName: demo_build
       buildNumber: 1    
 
-  - name: dbp_promoted_build_info
+  - name: demo_promoted_build_info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: dbp_build
+      buildName: demo_build
       buildNumber: 1
       
 
 pipelines:
-  - name: pipeline_dbp
+  - name: pipeline_demo
     steps:
       - name: docker_build
         type: DockerBuild
         configuration:
-          affinityGroup: dbp_group
+          affinityGroup: demo_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
           dockerImageName: katcsandbox.jfrog.io/demo-docker-local/docker-demo  # replace with your image path and name
           dockerImageTag: ${run_number}
           inputResources:
-            - name: dbp_repo
+            - name: demo_repo
           integrations:
             - name: art                            # <-- replace with your artifactory integration
 
@@ -57,7 +57,7 @@ pipelines:
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: dbp_image
+            - name: demo_build
 
       - name: publish_dbp_build
         type: PublishBuildInfo
@@ -67,13 +67,13 @@ pipelines:
           outputResources:
             - name: dbp_build_info
 
-      - name: promote_dbp_build
+      - name: promote_demo_build
         type: PromoteBuild
         configuration:
-          targetRepository: demo-pipelines
+          targetRepository: demo-docker
           integrations:
             - name: art
           inputResources:
-            - name: dbp_build_info
+            - name: demo_build_info
           outputResources:
-            - name: dbp_promoted_build_info
+            - name: demo_promoted_build_info
