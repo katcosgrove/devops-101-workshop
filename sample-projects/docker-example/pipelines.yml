@@ -50,7 +50,7 @@ pipelines:
       - name: docker_push
         type: DockerPush
         configuration:
-          affinityGroup: dbp_group
+          affinityGroup: demo_group
           targetRepository: docker-local
           integrations:
             - name: art                            # <-- replace with your artifactory integration
@@ -59,13 +59,13 @@ pipelines:
           outputResources:
             - name: demo_build
 
-      - name: publish_dbp_build
+      - name: publish_demo_build
         type: PublishBuildInfo
         configuration:
           inputSteps:
             - name: docker_push
           outputResources:
-            - name: dbp_build_info
+            - name: demo_build_info
 
       - name: promote_demo_build
         type: PromoteBuild
