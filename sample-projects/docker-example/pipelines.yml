@@ -11,7 +11,7 @@ resources:
     type: Image
     configuration:
       registry: art                                # <-- replace with your artifactory integration
-      sourceRepository: docker_local               # <-- required if registry is Artifactory
+      sourceRepository: demo-docker-local               # <-- required if registry is Artifactory
       imageName: katcsandbox.jfrog.io/demo-docker-local/docker-demo # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
@@ -51,7 +51,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: demo_group
-          targetRepository: docker-local
+          targetRepository: demo-docker-local
           integrations:
             - name: art                            # <-- replace with your artifactory integration
           inputSteps:
