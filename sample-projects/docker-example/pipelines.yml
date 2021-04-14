@@ -66,14 +66,3 @@ pipelines:
             - name: docker_push
           outputResources:
             - name: demo_build_info
-
-      - name: promote_demo_build
-        type: PromoteBuild
-        configuration:
-          targetRepository: demo-docker
-          integrations:
-            - name: art
-          inputResources:
-            - name: demo_build_info
-          outputResources:
-            - name: demo_promoted_build_info
