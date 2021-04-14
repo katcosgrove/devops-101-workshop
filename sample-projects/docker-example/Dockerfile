@@ -1,1 +1,12 @@
-FROM kat101.jfrog.io/docker/ubuntu:16.04
+FROM python:3-alpine
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 5000 
+
+CMD ["python", "app.py"]

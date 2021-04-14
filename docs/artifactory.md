@@ -27,18 +27,7 @@ This step will walk you through creating a Docker repository type and uploading 
     - From the main UI, clicking Artifactory -> Artifacts should now show you three new repositories: docker, docker-local, and docker-remote.
 
 2. Get a Container
-    - Let's get a small container in there. Fork and clone this repository. In sample-projects/docker-example, you will find a Dockerfile. Update it to reference your server and virtual Docker repository, like so:
-
-        `FROM ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/ubuntu:16.04`
-
-        becomes
-
-        `FROM katc.jfrog.io/docker/ubuntu:16.04`
-
-
-The SERVER NAME is the first part of the URL for your environment.
-
-The VIRTUAL_REPO_NAME is the `docker` repository created by the quick setup wizard.
+    - Let's get a small container in there. Fork and clone this repository. In sample-projects/docker-example, you will find a Dockerfile. 
 
 2. Build and Tag
     - In your terminal, log into the Docker client:
@@ -57,36 +46,3 @@ The VIRTUAL_REPO_NAME is the `docker` repository created by the quick setup wiza
         `docker push ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/my-docker-image:latest`
 
     - Back in the platform UI, in your Artifactory repository tree, you will now see your docker image!
-
-
-### Python
-
-To get started with Python in Artifactory, click the dropdown in the upper right-hand corner and select Quick Setup. From that screen, select PyPi. Click Create, and if you navigate back to Artifactory -> Artifacts in the platform UI, you'll see your new Python repositories!
-
-
-1. Set Up the Repo
-    - Click the PyPi virtual repository in the file tree. The name is just "PyPi." Click "Set Me Up" in the right-hand corner.
-    - Enter your platform password in the screen that pops up to automatically populate the various setup commands with your instance information and keys.
-    - Add the following to your .pypirc file. Typically, it is found in your home directory.
-        `[distutils]
-         index-servers = local
-         [local]
-         repository: https://${SERVER_NAME}.jfrog.io/artifactory/api/pypi/pypi
-         username: <USERNAME>
-         password: <PASSWORD>`
-
-2. Deploy a Wheel
-    - In the terminal, navigate to your forked copy of this repository and /sample-projects/python-example. Run this command to deploy your package as a Python wheel:
-        `python3 setup.py bdist_wheel upload -r local`
-    - If you want to deploye a Python egg instead, the command is this:
-        `python3 setup.py sdist upload -r local`
-    - Note that you may need to either update or install Setuptools and wheel for this to work. If Python throws an error when you attempt to deploy your wheel, run this command to make sure Setuptools and wheel are installed and updated:
-        `python3 -m pip install --user --upgrade setuptools wheel`
-
-At this point, you'll be able to see your package in the Artifactory repository tree, under PyPi!
-
-3. Resolving from Artifactory
-    - If you want to resolve your package from Artifactory, you need to tell pip where to look by adding the following to your .pip.conf file. It's usually found in your home directory, at .pip/pip.conf
-        `[global]
-        index-url = https://<USERNAME>:<PASSWORD>@${SERVER_NAME}.jfrog.io/artifactory/api/pypi/pypi/simple`
-    - From then on, if you run `pip install <package name>`, it will install from your Artifactory repository rather than from PyPi.
