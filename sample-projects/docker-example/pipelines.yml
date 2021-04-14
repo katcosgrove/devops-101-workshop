@@ -3,9 +3,9 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: my_github                       # <-- replace with your integration
-      path: katcosgrove/devops-101-workshop    # <-- replace with your repository name
+      path: katcosgrove/devops-101-workshop/sample-projects/docker-example    # <-- replace with your repository name
       branches:
-        include: master
+        include: new-pipeline
 
   - name: demo_build
     type: Image
