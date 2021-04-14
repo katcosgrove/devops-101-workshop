@@ -27,18 +27,7 @@ This step will walk you through creating a Docker repository type and uploading 
     - From the main UI, clicking Artifactory -> Artifacts should now show you three new repositories: docker, docker-local, and docker-remote.
 
 2. Get a Container
-    - Let's get a small container in there. Fork and clone this repository. In sample-projects/docker-example, you will find a Dockerfile. Update it to reference your server and virtual Docker repository, like so:
-
-        `FROM ${SERVER_NAME}.jfrog.io/${VIRTUAL_REPO_NAME}/ubuntu:16.04`
-
-        becomes
-
-        `FROM katc.jfrog.io/docker/ubuntu:16.04`
-
-
-The SERVER NAME is the first part of the URL for your environment.
-
-The VIRTUAL_REPO_NAME is the `docker` repository created by the quick setup wizard.
+    - Let's get a small container in there. Fork and clone this repository. In sample-projects/docker-example, you will find a Dockerfile. 
 
 2. Build and Tag
     - In your terminal, log into the Docker client:
