@@ -1,1 +1,1 @@
-FROM kat101.jfrog.io/docker/ubuntu:16.04
+FROM katcsandbox.jfrog.io/demo-docker-local/ubuntu:16.04
